@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! [ -x "$(command -v flatpak)" ]; then
-  sudo add-apt-repository ppa:alexlarsson/flatpak
+  sudo add-apt-repository ppa:alexlarsson/flatpak -y
   sudo apt update
   sudo apt install -y flatpak gnome-software-plugin-flatpak
 fi
