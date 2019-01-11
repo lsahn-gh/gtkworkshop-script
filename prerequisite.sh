@@ -2,8 +2,8 @@
 
 if [ -x "$(command -v flatpak)" ] && [ $(flatpak --version | cut -d" " -f2) != "1.0.6" ]; then
   echo ""
-  echo " ** Current flatpak is $CURVER"
-  echo " ** It will be purged"
+  echo " ** Current flatpak is not 1.0.6"
+  echo " ** It will be purged and reinstall it"
   sudo apt purge -y flatpak
 fi
 
