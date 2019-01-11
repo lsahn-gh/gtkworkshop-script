@@ -1,6 +1,15 @@
 #!/bin/bash
 
+if [ -x "$(command -v flatpak)" ] && [ $(flatpak --version | cut -d" " -f2) != "1.0.6" ]; then
+  echo ""
+  echo " ** Current flatpak is $CURVER"
+  echo " ** It will be purged"
+  sudo apt purge -y flatpak
+fi
+
 if ! [ -x "$(command -v flatpak)" ]; then
+  echo ""
+  echo " ** Installing latest flatpak now..."
   sudo add-apt-repository ppa:alexlarsson/flatpak -y
   sudo apt update
   sudo apt install -y flatpak gnome-software-plugin-flatpak
