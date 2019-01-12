@@ -6,6 +6,7 @@ if ! [ -x "$(command -v flatpak)" ]; then
 fi
 
 flatpak install -y -v --user flathub org.gnome.Sdk//3.30
+flatpak install -y -v --user flathub org.gnome.Platform//3.30
 flatpak install -y -v --user flathub org.gnome.Builder//stable
 
 echo ""
